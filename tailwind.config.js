@@ -9,6 +9,7 @@ module.exports = {
       colors: {
         "default-text": "#2F3C7E",
         "default-bg": "#FBEAEB",
+        "default-card-bg": "#E2F0CB",
       },
     },
   },

@@ -1,0 +1,34 @@
+<div
+  class="max-w-sm bg-default-card-bg rounded overflow-hidden shadow-lg m-4 hover:shadow-xl transition-shadow duration-300 ease-in-out"
+>
+  <div class="px-6 py-4">
+    <div class="font-bold text-xl mb-2 text-default-text">
+      {{ projectDetails.name }}
+    </div>
+    <p class="text-default-text text-base">{{ projectDetails.description }}</p>
+  </div>
+  <div class="px-6 pt-4 pb-2">
+    @for (tech of projectDetails.techStacks; track $index) {
+    <span
+      class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+      >{{ tech }}
+    </span>
+    }
+  </div>
+  <div class="px-6 pt-4 pb-2 flex justify-between space-x-2">
+    <a
+      href="{{ projectDetails.github }}"
+      target="_blank"
+      class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full shadow-md transform hover:scale-105 transition duration-300 ease-in-out"
+      >GitHub</a
+    >
+    @if (projectDetails.liveLink!=="") {
+    <a
+      href="{{ projectDetails.liveLink }}"
+      target="_blank"
+      class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-full shadow-md transform hover:scale-105 transition duration-300 ease-in-out"
+      >Live</a
+    >
+    }
+  </div>
+</div>
